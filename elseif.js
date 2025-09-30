@@ -224,7 +224,7 @@ function kolmio(a, b, c) {
 
 // Esimerkkien testaus
 console.log(kolmio(60, 60, 60));  // "Kolmio on mahdollinen"
-co
+
 
 
 
