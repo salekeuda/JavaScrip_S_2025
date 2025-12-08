@@ -6,7 +6,7 @@ function setup() {
     background(0);
   }
 
-let playerPaddle();
+let playerPaddle;
 
 function setup() {
     createCanvas(624,351);
