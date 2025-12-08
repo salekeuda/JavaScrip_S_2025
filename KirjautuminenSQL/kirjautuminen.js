@@ -1,18 +1,33 @@
-php
-// Yksinkertainen MySQL-yhteys
-
-$servername = "localhost";
-$username   = "jyri";
-$password   = "salasana";  // lisää salasana jos sinulla on sellainen
-$dbname     = "asiakasrekisteri";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-
-// Tarkistetaan onnistuiko yhteys
-if ($conn->connect_error) {
-    die("Tietokantavirhe: " . $conn->connect_error);
-}
-
-$conn->set_charset("utf8mb4");
-?
+function tarkistaLomake(event) {
+    event.preventDefault(); // Estää lomakkeen lähetyksen
+  
+    const nimi = document.getElementById("nimi").value.trim();
+    const salasana = document.getElementById("salasana").value.trim();
+    const radioValinta = document.querySelector('input[name="arvio"]:checked');
+    const kommentti = document.getElementById("kommentti").value.trim();
+  
+    let virheet = [];
+  
+    if (nimi === "") {
+      virheet.push("Anna nimesi.");
+    }
+  
+    if (salasana === "") {
+      virheet.push("Anna salasana.");
+    }
+  
+    if (!radioValinta) {
+      virheet.push("Valitse arvio koneesta.");
+    }
+  
+    if (kommentti.length < 10) {
+      virheet.push("Kirjoita vähintään 10 merkkiä kommenttiin.");
+    }
+  
+    if (virheet.length > 0) {
+      alert("Korjaa seuraavat virheet:\n- " + virheet.join("\n- "));
+    } else {
+      alert("Lomake lähetetty onnistuneesti!");
+      document.getElementById("lomake").submit(); // Lähetetään lomake
+    }
+  }

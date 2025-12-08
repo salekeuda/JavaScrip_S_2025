@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Asimovian&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+h1 {
+    font-family: "Asimovian", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+
+    
+}
+
+
+form {
+    border: 1px solid black;
+    width: 300px;
+    padding: 7px;
+    flex-direction: column;
+    background-color: rgb(247, 217, 222);
+             
+}
+
+label {
+    font-weight: bold;
+}
+
+input[name="nimi"] {
+    background-color: rgb(253, 236, 239);
+}
+
+input[type="button"], input[type="submit"] {
+    margin: 5px;
+}
