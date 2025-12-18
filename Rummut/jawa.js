@@ -3,12 +3,12 @@ function removeTransition(e) {
     e.target.classList.remove('playing');
 }
 
-funtion playSound(e) {
-    const audio = document.querySelector(`audio[data-key="${e.keycode}"]`);
-    const key = document.querySelector(`div[data-key="${e.keycode}"]`);
+function playSound(e) {
+    const audio = document.querySelector(`audio[data-key="${e.key}"]`);
+    const key = document.querySelector(`div[data-key="${e.key}"]`);
     if (!audio) return;
 
-    key classList.add('playing');
+    key.classList.add('playing');
     audio.currentTime = 0;
     audio.play();
 }
